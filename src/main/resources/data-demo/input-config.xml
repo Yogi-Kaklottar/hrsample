@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<csv-inputs xmlns="http://axelor.com/xml/ns/data-import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/data-import
+    http://axelor.com/xml/ns/data-import/data-import_5.2.xsd">
+
+  <!-- <input file="address.csv" type="com.axelor.hr.db.Addres" /> -->
+  <!-- <input file="department.csv" type="com.axelor.hr.db.Department"> -->
+  <!-- <header>name</header> -->
+  <!-- <bind to="name" column="code"></bind> -->
+  <!-- </input> -->
+  <!-- name,dob,age,dept,street,area,pin,entrytime -->
+
+  <!-- adepaterdata -->
+
+  <adapter name="LocalDate" type="com.axelor.data.adapter.JavaTimeAdapter">
+    <option name="type" value="LocalDate" />
+    <option name="format" value="dd/MM/yyyy" />
+  </adapter>
+
+  <!-- taskData -->
+
+  <input file="task.csv" type="com.axelor.hr.db.Task" />
+
+  <!-- employee data -->
+
+
+  <input file="employee.csv" type="com.axelor.hr.db.Employee" >
+    <bind to="name" column="name"></bind>
+    <bind to="dateofbirth" column="dob" adapter="LocalDate"></bind>
+    <bind to="age" column="age"></bind>
+    <bind to="department" search="self.name = :dept">
+      <bind to="name" column="dept" />
+      <!-- <bind to="code" column="code"/> -->
+    </bind>
+
+    <bind to="addres">
+      <bind to="street" column="street"></bind>
+      <bind to="area" column="area"></bind>
+      <bind to="pin" column="pin"></bind>
+      <bind to="entrytime" column="entrytime" />
+    </bind>
+
+    <!-- <bind to="laptop" column="l1"></bind> -->
+    <!-- <bind to="laptop" column="l2"></bind> -->
+    <bind column="t1" to="task" search="self.name in :t1" eval="t1.split('\\|') as List" />
+    <bind to="curruntdate" eval="new org.joda.time.LocalDate()" />
+  </input>
+
+  <!-- laptop data -->
+
+  <input file="laptop.csv" type="com.axelor.hr.db.Laptop" />
+
+  <!-- student call method -->
+
+  <input file="student.csv" type="com.axelor.hr.db.Student" call="com.axelor.app.service.Validation:validationMethod" />
+
+  <!-- <input file="country.csv" type="com.axelor.hr.db.Country"></input> -->
+  <!-- <input file="state.csv" type="com.axelor.hr.db.State" search="self.importId = :importId"></input> -->
+  <!-- <input file="city.csv" type="com.axelor.hr.db.City" search="self.importId = :importId"></input> -->
+
+  <!-- combination country state city -->
+  <!-- <input file="combocontain.csv" type="com.axelor.hr.db.Country">
+    <bind to="name" column="country">
+      <bind to="state" search="self.name = :state">
+        <bind to="name" column="state" search="self = :state">
+          <bind to="city" search="self.name = :city">
+            <bind to="name" column="city" />
+          </bind>
+        </bind>
+      </bind>
+    </bind>
+  </input> -->
+
+  <input file="combocontain.csv" type="com.axelor.hr.db.City">
+    <bind to="name" column="city" />
+    <bind to="state" search="self.name = :state" >
+      <bind to="name" column="state" />
+      <bind to="country" search="self.name = :country">
+        <bind to="name" column="country" />
+      </bind>
+    </bind>
+  </input>
+
+</csv-inputs>

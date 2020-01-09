@@ -1,0 +1,4 @@
+importId,name,dob,age,dept,street,area,pin,entrytime,t1,photo
+1,rajesh,02/12/1995,25,hr,amroli,surat,394107,2010-01-01,task1|task2,h1.png
+2,piyush,03/06/1996,24,production,bhatar,surat,223455,2019-11-02,task2|task3|task4,h1.png
+3,nayan,09/12/1997,21,hr,vesu,surat,554467,2015-01-03,task3|task1|task2,h1.png

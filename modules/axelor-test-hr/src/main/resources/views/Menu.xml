@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.2.xsd">
+
+  <menuitem name="menu-hr-employee" order="-100" title="All Employee" icon="fa-users" icon-background="blue" />
+
+  <!-- employee menu -->
+  <menuitem title="Employees" name="menu-Employee-all" parent="menu-hr-employee" action="employee.all" tag-style="important" />
+  <action-view name="employee.all" model="com.axelor.hr.db.Employee" title="employees">
+    <view type="grid" name="employee-grid" />
+    <view type="form" name="employee-form" />
+    <view type="calendar" name="student-calenderview" />
+    <context name="json-enhance" expr="true" />
+  </action-view>
+
+  <!-- department menu -->
+
+  <menuitem title="Department" name="menu-Department-all" parent="menu-hr-employee" action="department.all" tag-style="default" />
+  <action-view name="department.all" model="com.axelor.hr.db.Department" title="departments">
+    <view type="grid" name="department-grid" />
+    <view type="form" name="department-form" />
+    <context name="json-enhance" expr="true" />
+  </action-view>
+
+  <!-- laptop menu -->
+
+  <menuitem title="laptop" name="menu-Laptop-all" parent="menu-hr-employee" action="laptop.all" tag-style="info" />
+  <action-view name="laptop.all" model="com.axelor.hr.db.Laptop" title="Laptop">
+    <view type="grid" name="laptop-grid" />
+    <view type="form" name="laptop-form" />
+    <context name="json-enhance" expr="true" />
+  </action-view>
+
+  <!-- task menu -->
+  <menuitem title="task" name="menu-task-all" parent="menu-hr-employee" action="task.all" tag-style="success" />
+  <action-view name="task.all" model="com.axelor.hr.db.Task" title="task">
+    <view type="grid" name="task-grid" />
+    <view type="form" name="task-form" />
+    <context name="json-enhance" expr="true" />
+  </action-view>
+  <!-- address menu -->
+
+  <menuitem title="addres" name="menu-addres-all" parent="menu-hr-employee" action="addres.all" tag-style="warning" />
+  <action-view name="addres.all" model="com.axelor.hr.db.Addres" title="addres">
+    <view type="grid" name="addres-grid" />
+    <view type="form" name="addres-form" />
+    <!-- <view type="cards" name="employee-cards"/> -->
+    <context name="json-enhance" expr="true" />
+  </action-view>
+
+  <!-- test class listener -->
+
+  <menuitem title="test" name="menu-test-all" parent="menu-hr-employee" action="test.all" />
+  <action-view name="test.all" model="com.axelor.app.db.Test" title="test">
+    <view type="grid" name="test-grid" />
+    <view type="form" name="test-form" />
+    <context name="json-enhance" expr="true" />
+  </action-view>
+
+  <!-- demo class Listener -->
+  <menuitem title="demo" name="menu-demo-all" parent="menu-hr-employee" action="demo.all" />
+  <action-view name="demo.all" model="com.axelor.app.db.Demo" title="test">
+    <view type="grid" name="demo-grid" />
+    <!-- <view type="tree" name="app-demo-tree"/> -->
+    <view type="form" name="demo-form" />
+    <context name="json-enhance" expr="true" />
+  </action-view>
+
+  <!-- employee tree view -->
+
+  <menuitem title="View" name="menu-emp-all" parent="menu-hr-employee" action="empl.all" />
+  <action-view name="empl.all" model="com.axelor.app.db.Employee" title="tree-view">
+    <view type="tree" name="employee-tree-view" />
+    <context name="json-enhance" expr="true" />
+  </action-view>
+
+  <!-- employee card view -->
+
+  <menuitem title="card-view" name="menu-emp-card-all" parent="menu-hr-employee" action="emplcard.all" />
+  <action-view name="emplcard.all" model="com.axelor.hr.db.Employee" title="card-view">
+    <view type="cards" name="employee-card-view" />
+    <context name="json-enhance" expr="true" />
+  </action-view>
+
+  <!-- city menu -->
+  <menuitem title="city-view" name="menu-city-all" parent="menu-hr-employee" action="city.all" />
+  <action-view name="city.all" model="com.axelor.hr.db.City" title="city-view">
+    <view type="grid" name="city-grid" />
+    <view type="form" name="city-form" />
+    <context name="json-enhance" expr="true" />
+  </action-view>
+
+  <!-- Student menu -->
+  <menuitem title="student-view" name="menu-student-all" parent="menu-hr-employee" action="student.all" />
+  <action-view name="student.all" model="com.axelor.hr.db.Student" title="student-view">
+    <view type="grid" name="student-grid" />
+    <view type="kanban" name="student-kanaban" />
+    <view type="dashboard" name="dashboard-student-marks" />
+    <view type="form" name="student-form" />
+
+  </action-view>
+  <!-- deshboard menu -->
+  <menuitem title="student-chart" name="student-chart" parent="menu-hr-employee" action="student.chart" />
+  <action-view name="student.chart" model="com.axelor.hr.db.Student" title="student-chart">
+    <view type="dashboard" name="dashboard-student-marks" />
+  </action-view>
+
+  <!-- employee master view -->
+  <menuitem title="employee-masterview" name="employee-masterview" parent="menu-hr-employee" action="employee.masterview" />
+  <action-view name="employee.masterview" model="com.axelor.hr.db.Employee" title="employee-masterview">
+    <view type="grid" name="employee-grid" />
+    <view type="form" name="employee-form" />
+    <view-param name="details-view" value="true" />
+  </action-view>
+
+<!-- 	popup menu -->
+
+	<menuitem title="city-popup-view" name="city-popup-view" parent="menu-hr-employee" action="city-popup" />
+	<action-view name="city-popup" model="com.axelor.hr.db.City" title="city-popup">		
+		<view type="form" name="city-pop-form" />
+		<view-param name="details-view" value="true" />
+	</action-view>
+</object-views>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models
+  xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.2.xsd">
+
+  <module name="hr" package="com.axelor.hr.db" />
+  <entity name="Addres" cacheable="true">
+      <string name="street" namecolumn="true"></string>
+      <string name="area"></string>
+      <string name="pin"></string>
+      <datetime name="entrytime"></datetime>
+<!--       <string name="fulladd" namecolumn="true" search="street,area,pin"><![CDATA[ -->
+<!--       if(street==null && area==null && pin==null) -->
+<!--           return null; -->
+<!--       else -->
+<!--             return street + "/" + area + "/" + pin + ""; -->
+<!--       ]]></string> -->
+    <one-to-one name="employee" ref="com.axelor.hr.db.Employee" mappedBy="addres"/>
+  </entity>
+
+</domain-models>
