@@ -71,14 +71,6 @@
     </bind>
   </input> -->
 
-  <input file="combocontain.csv" type="com.axelor.hr.db.City">
-    <bind to="name" column="city" />
-    <bind to="state" search="self.name = :state" >
-      <bind to="name" column="state" />
-      <bind to="country" search="self.name = :country">
-        <bind to="name" column="country" />
-      </bind>
-    </bind>
-  </input>
+
 
 </csv-inputs>

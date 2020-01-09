@@ -1,6 +1,9 @@
 <object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axel or.com/xml/ns/object-views/object-views_5.2.xsd">
   <grid name="city-grid" title="city List" model="com.axelor.hr.db.City">
+    <toolbar>
+      <button name="citydata" title="Add city" onClick="action-hr-city-btnclick-importdata" />
+    </toolbar>
     <field name="country"></field>
     <field name="state"></field>
     <field name="name"></field>
@@ -22,12 +25,12 @@
 
   <form name="city-pop-form" title="city list" model="com.axelor.hr.db.City">
     <panel name="Overview">
-     
+
       <field name="country" colSpan="12" />
-      <field name="state" colSpan="12"  onSelect="city.attrs.country.select.state" />
-       <field name="name" colSpan="12"></field>
-		<button name="Country-Btn" title="CountryAll" onClick="action.hr.view.popup.country.all" />
-		<button name="Statey-Btn" title="StateAll" onClick="action.hr.view.popup.state.all" />
+      <field name="state" colSpan="12" onSelect="city.attrs.country.select.state" />
+      <field name="name" colSpan="12"></field>
+      <button name="Country-Btn" title="CountryAll" onClick="action.hr.view.popup.country.all" />
+      <button name="Statey-Btn" title="StateAll" onClick="action.hr.view.popup.state.all" />
     </panel>
   </form>
 
@@ -45,27 +48,27 @@
     </panel>
   </form>
 
-    <action-view name="action.hr.view.popup.country.all" model="com.axelor.hr.db.Country" title="Add Country">
-      <view type="form" name="country-pop-form" />
-      <view-param name="popup" value="reload" />
-      <view-param name="show-toolbar" value="false" />
-      <view-param name="show-confirm" value="false" />
-      <view-param name="popup-save" value="true" />
-<!--       <view-param name="forceEdit" value="true" /> -->
-      <!-- <context name="_showRecord" expr="eval: id" /> -->
-    </action-view>
+  <action-view name="action.hr.view.popup.country.all" model="com.axelor.hr.db.Country" title="Add Country">
+    <view type="form" name="country-pop-form" />
+    <view-param name="popup" value="reload" />
+    <view-param name="show-toolbar" value="false" />
+    <view-param name="show-confirm" value="false" />
+    <view-param name="popup-save" value="true" />
+    <!-- <view-param name="forceEdit" value="true" /> -->
+    <!-- <context name="_showRecord" expr="eval: id" /> -->
+  </action-view>
 
-    <action-view name="action.hr.view.popup.state.all" model="com.axelor.hr.db.State" title="Add state">
-      <view type="form" name="state-pop-form" />
-      <view-param name="popup" value="reload" />
-      <view-param name="show-toolbar" value="false" />
-      <view-param name="show-confirm" value="false" />
-      <view-param name="popup-save" value="true" />
-<!--       <view-param name="forceEdit" value="true" /> -->
-      <!-- <context name="_showRecord" expr="eval: id" /> -->
-    </action-view>
+  <action-view name="action.hr.view.popup.state.all" model="com.axelor.hr.db.State" title="Add state">
+    <view type="form" name="state-pop-form" />
+    <view-param name="popup" value="reload" />
+    <view-param name="show-toolbar" value="false" />
+    <view-param name="show-confirm" value="false" />
+    <view-param name="popup-save" value="true" />
+    <!-- <view-param name="forceEdit" value="true" /> -->
+    <!-- <context name="_showRecord" expr="eval: id" /> -->
+  </action-view>
 
-  
+
 
 
 
@@ -120,4 +123,9 @@
     <attribute name="readonly" for="name" expr="eval:__this__.display" />
   </action-attrs>
 
+
+  <!-- action method import data -->
+  <action-method name="action-hr-city-btnclick-importdata">
+    <call class="com.axelor.app.service.Csvimport" method="importcitydata" />
+  </action-method>
 </object-views>
