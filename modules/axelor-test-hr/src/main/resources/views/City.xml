@@ -2,7 +2,9 @@
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axel or.com/xml/ns/object-views/object-views_5.2.xsd">
   <grid name="city-grid" title="city List" model="com.axelor.hr.db.City">
     <toolbar>
-      <button name="citydata" title="Add city" onClick="action-hr-city-btnclick-importdata" />
+      <button name="citydataBtn" title="Add city" onClick="action-hr-city-btnclick-importdata" />
+     	
+      <button name="citydataBtn1" title="count Country" onClick="action-method-hr-country-count" />
     </toolbar>
     <field name="country"></field>
     <field name="state"></field>
@@ -127,5 +129,10 @@
   <!-- action method import data -->
   <action-method name="action-hr-city-btnclick-importdata">
     <call class="com.axelor.app.service.Csvimport" method="importcitydata" />
+  </action-method>
+
+  <!-- action method count country-->
+  <action-method name="action-method-hr-country-count">
+    <call class="com.app.hr.web.StudentController" method="countCountry" />
   </action-method>
 </object-views>

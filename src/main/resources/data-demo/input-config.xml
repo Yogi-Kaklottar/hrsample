@@ -52,7 +52,7 @@
 
   <!-- student call method -->
 
-  <input file="student.csv" type="com.axelor.hr.db.Student" call="com.axelor.app.service.Validation:validationMethod" />
+<!--   <input file="student.csv" type="com.axelor.hr.db.Student" call="com.axelor.app.service.Validation:validationMethod" /> -->
 
   <!-- <input file="country.csv" type="com.axelor.hr.db.Country"></input> -->
   <!-- <input file="state.csv" type="com.axelor.hr.db.State" search="self.importId = :importId"></input> -->

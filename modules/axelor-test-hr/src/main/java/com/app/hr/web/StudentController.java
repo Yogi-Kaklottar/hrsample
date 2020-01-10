@@ -1,10 +1,17 @@
 package com.app.hr.web;
 
+import java.util.Map;
+
+import com.axelor.db.JPA;
+import com.axelor.db.JpaSupport;
+import com.axelor.hr.db.City;
+import com.axelor.hr.db.Country;
+import com.axelor.hr.db.State;
 import com.axelor.hr.db.Student;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 
-public class StudentController {
+public class StudentController extends JpaSupport {
 
   public void setResult(ActionRequest request, ActionResponse response) {
     Student s = request.getContext().asType(Student.class);
@@ -31,5 +38,14 @@ public class StudentController {
     // s.getGrade());
     // return;
     //		response.setValue("total", n);
+  }
+
+  public void countCountry(ActionRequest request,ActionResponse response) {
+    long count1 = JPA.all(Country.class).count();    
+    long count2 = JPA.all(State.class).count();
+    long count3 = JPA.all(City.class).count();
+    
+     response.setFlash("Country:"+count1+"\n state:"+count2+"\n city:"+count3);
+   
   }
 }

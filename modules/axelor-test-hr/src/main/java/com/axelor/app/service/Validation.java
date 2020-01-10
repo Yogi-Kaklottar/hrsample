@@ -33,6 +33,7 @@ public class Validation {
       s.setGreadselect(5);
       s.setProgress(3);
     }
+
     return bean;
   }
 }
