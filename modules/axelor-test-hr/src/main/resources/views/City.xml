@@ -3,7 +3,7 @@
   <grid name="city-grid" title="city List" model="com.axelor.hr.db.City">
     <toolbar>
       <button name="citydataBtn" title="Add city" onClick="action-hr-city-btnclick-importdata" />
-     	
+
       <button name="citydataBtn1" title="count Country" onClick="action-method-hr-country-count" />
     </toolbar>
     <field name="country"></field>

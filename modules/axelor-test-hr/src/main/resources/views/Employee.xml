@@ -14,6 +14,9 @@
   </grid>
 
   <form name="employee-form" title="Employee list" model="com.axelor.hr.db.Employee" onNew="action.record.employee.onnew.setdate,action-attrs-onnew-date-tital-change">
+    <toolbar>
+      <button name="EmployeeReport" title="EmployeeReport" onClick="action-hr-employee-detail-report" />
+    </toolbar>
     <panel title="Overview">
     <field name="photo" colSpan="3" showTitle="false"></field>
       <field name="name" colSpan="6"/>
@@ -43,4 +46,10 @@
           <attribute name="title" for="curruntdate" expr="eval:'todaydate'"/>
   </action-attrs>
 
+
+<!-- employee detail report -->
+
+    <action-report output="Employee" name="action-hr-employee-detail-report" design="EmployeeDetail.rptdesign">
+    <param name="id" expr="eval: __self__.id"/>
+  </action-report>
   </object-views>

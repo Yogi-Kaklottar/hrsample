@@ -6,6 +6,7 @@
    <module name="hr" package="com.axelor.hr.db" />
   <entity name="Student" cacheable="true">
   <string name="name"/>
+  <many-to-one name="studentimage" title="picture" ref="com.axelor.meta.db.MetaFile"/>
  <integer name="marks1" ></integer>
  <integer name="marks2" ></integer>
  <integer name="marks3" ></integer>

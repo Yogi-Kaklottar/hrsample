@@ -1,7 +1,5 @@
 package com.app.hr.web;
 
-import java.util.Map;
-
 import com.axelor.db.JPA;
 import com.axelor.db.JpaSupport;
 import com.axelor.hr.db.City;
@@ -40,12 +38,11 @@ public class StudentController extends JpaSupport {
     //		response.setValue("total", n);
   }
 
-  public void countCountry(ActionRequest request,ActionResponse response) {
-    long count1 = JPA.all(Country.class).count();    
+  public void countCountry(ActionRequest request, ActionResponse response) {
+    long count1 = JPA.all(Country.class).count();
     long count2 = JPA.all(State.class).count();
     long count3 = JPA.all(City.class).count();
-    
-     response.setFlash("Country:"+count1+"\n state:"+count2+"\n city:"+count3);
-   
+
+    response.setFlash("Country:" + count1 + "\n state:" + count2 + "\n city:" + count3);
   }
 }

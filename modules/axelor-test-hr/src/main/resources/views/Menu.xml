@@ -120,4 +120,10 @@
     <view type="form" name="city-pop-form" />
     <view-param name="details-view" value="true" />
   </action-view>
+
+   <menuitem title="city-report" name="city-report-view" parent="menu-hr-employee" action="city-report" />
+  <action-view name="city-report" model="com.axelor.hr.db.City" title="city-report">
+    <view type="form" name="city-report-grid" />
+
+  </action-view>
 </object-views>

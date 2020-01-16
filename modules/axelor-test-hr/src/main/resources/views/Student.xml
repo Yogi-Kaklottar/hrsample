@@ -3,8 +3,9 @@
 
 
   <grid name="student-grid" title="student List" model="com.axelor.hr.db.Student">
-  <toolbar>
-      <button name="Student data" title="Add Student" onClick="action-hr-student-import-data"/>
+    <toolbar>
+      <button name="Student data" title="Add Student" onClick="action-hr-student-import-data" />
+       <button name="Result" title="Overall Result" onClick="action-hr-student-report-overall" />
     </toolbar>
     <field name="name"></field>
     <field name="marks1" />
@@ -21,8 +22,12 @@
 
 
   <form name="student-form" title="student list" model="com.axelor.hr.db.Student" onSave="action-student-group-onsave">
+    <toolbar>
+      <button name="Student Report" title="StudentReport" onClick="action-hr-student-report" />
+    </toolbar>
     <panel title="Overview">
-      <field name="name" colSpan="12"></field>
+      <field name="studentimage" colSpan="4"  widget="Image" />
+      <field name="name" colSpan="8"></field>
       <field name="marks1" />
       <field name="marks2" />
       <field name="marks3" />
@@ -56,9 +61,11 @@
     <error message="PLease Enter Correct Marks3" if="!(marks3 &lt; 100 &amp;&amp; marks3 &gt;0)" action="action-attrs-student-validate-marks3-setdefault"></error>
 
 
-
-
   </action-validate>
+
+
+
+
 
   <!-- action for the perticular validation marks sert default values -->
 
@@ -96,9 +103,25 @@
   </action-condition>
 
 
-<!-- 	action method student data -->
+  <!-- action method student data -->
 
   <action-method name="action-hr-student-import-data">
     <call class="com.axelor.app.service.Studentimportcsv" method="studImport" />
   </action-method>
+
+
+  <!-- student report -->
+  
+<!--   <action-method name="action-hr-student-report" > -->
+<!--   <call class="com.axelor.app.service.ImagePathGet" method="getData"/> -->
+
+<!--   </action-method> -->
+  <action-report output="Student" name="action-hr-student-report" design="stud.rptdesign">
+    <param name="id" expr="eval: __self__.id"/>
+    <param name="location" expr='eval:com?.axelor?.app?.AppSettings?.get()?.getPath("file.upload.dir", "")+"/"'/> 
+  </action-report>
+    <action-report output="Student" name="action-hr-student-report-overall" design="classReport.rptdesign">
+
+  </action-report>
+
 </object-views>

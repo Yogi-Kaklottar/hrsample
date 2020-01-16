@@ -1,0 +1,1562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201706222054</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">143</property>
+    <parameters>
+        <scalar-parameter name="id" id="37">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">decimal</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">1</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="EmployeeDetail" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/axelor-hr-c</property>
+            <property name="odaUser">axelor</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">YXhlbG9y</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="employee" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">id</text-property>
+                    <text-property name="heading">id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">archived</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">archived</text-property>
+                    <text-property name="heading">archived</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">version</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">version</text-property>
+                    <text-property name="heading">version</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">created_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">created_on</text-property>
+                    <text-property name="heading">created_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">updated_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">updated_on</text-property>
+                    <text-property name="heading">updated_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">age</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">age</text-property>
+                    <text-property name="heading">age</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">attrs</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">attrs</text-property>
+                    <text-property name="heading">attrs</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">curruntdate</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">curruntdate</text-property>
+                    <text-property name="heading">curruntdate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">dateofbirth</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">dateofbirth</text-property>
+                    <text-property name="heading">dateofbirth</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">import_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">import_id</text-property>
+                    <text-property name="heading">import_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">name</text-property>
+                    <text-property name="heading">name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">photo</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">photo</text-property>
+                    <text-property name="heading">photo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">created_by</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">created_by</text-property>
+                    <text-property name="heading">created_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">updated_by</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">updated_by</text-property>
+                    <text-property name="heading">updated_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">addres</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">addres</text-property>
+                    <text-property name="heading">addres</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">department</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">department</text-property>
+                    <text-property name="heading">department</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">id</property>
+                    <property name="paramName">id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">archived</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">version</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">created_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">updated_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">age</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">attrs</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">curruntdate</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">dateofbirth</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">import_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">photo</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">created_by</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">updated_by</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">addres</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">department</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">EmployeeDetail</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">id</property>
+                    <property name="nativeName">id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">archived</property>
+                    <property name="nativeName">archived</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">-7</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">version</property>
+                    <property name="nativeName">version</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">created_on</property>
+                    <property name="nativeName">created_on</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">updated_on</property>
+                    <property name="nativeName">updated_on</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">age</property>
+                    <property name="nativeName">age</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">attrs</property>
+                    <property name="nativeName">attrs</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1111</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">curruntdate</property>
+                    <property name="nativeName">curruntdate</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">dateofbirth</property>
+                    <property name="nativeName">dateofbirth</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">import_id</property>
+                    <property name="nativeName">import_id</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">photo</property>
+                    <property name="nativeName">photo</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">created_by</property>
+                    <property name="nativeName">created_by</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">updated_by</property>
+                    <property name="nativeName">updated_by</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">addres</property>
+                    <property name="nativeName">addres</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">department</property>
+                    <property name="nativeName">department</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from hr_employee where id=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>id</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>archived</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-7</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>archived</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>archived</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>version</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>version</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>version</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>created_on</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>created_on</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>created_on</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>updated_on</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>updated_on</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>updated_on</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>age</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>age</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>age</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>attrs</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1111</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>attrs</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>attrs</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>curruntdate</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>curruntdate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>curruntdate</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>dateofbirth</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>dateofbirth</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>dateofbirth</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>import_id</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>import_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>import_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>photo</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>photo</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>photo</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>created_by</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>created_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>created_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>updated_by</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>updated_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>updated_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>addres</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>addres</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>addres</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>department</design:name>
+              <design:position>16</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>department</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>department</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="address" id="52">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">address</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">address</text-property>
+                    <text-property name="heading">address</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">id</property>
+                    <property name="paramName">id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">address</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">EmployeeDetail</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">address</property>
+                    <property name="nativeName">address</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select street || ',' || area || ',' || pin  as address
+from hr_addres a,hr_employee e
+where a.id=e.addres and e.id=?;]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>address</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>address</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>address</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="department" id="72">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">name</text-property>
+                    <text-property name="heading">name</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">id</property>
+                    <property name="paramName">id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">EmployeeDetail</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select d.name
+from hr_department d,hr_employee e
+where d.id=e.department and e.id=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="laptop" id="100">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">name</text-property>
+                    <text-property name="heading">name</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">id</property>
+                    <property name="paramName">id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">EmployeeDetail</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select l.name
+from hr_laptop l,hr_employee e
+where l.employee=e.id and e.id=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="task" id="102">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">name</text-property>
+                    <text-property name="heading">name</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">id</property>
+                    <property name="paramName">id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">EmployeeDetail</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select t.name
+from hr_task t,hr_employee e,hr_employee_task et
+where t.id=et.task and e.id=hr_employee and e.id=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="6">
+            <property name="fontSize">16pt</property>
+            <property name="color">green</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">EMPLOYEE DETAIL</text-property>
+        </label>
+        <image id="7">
+            <property name="marginTop">10pt</property>
+            <property name="marginLeft">220pt</property>
+            <property name="height">1.3216783216783217in</property>
+            <property name="width">1.867132867132867in</property>
+            <property name="dataSet">employee</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">id</property>
+                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">archived</property>
+                    <expression name="expression" type="javascript">dataSetRow["archived"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">version</property>
+                    <expression name="expression" type="javascript">dataSetRow["version"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">created_on</property>
+                    <expression name="expression" type="javascript">dataSetRow["created_on"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">updated_on</property>
+                    <expression name="expression" type="javascript">dataSetRow["updated_on"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">age</property>
+                    <expression name="expression" type="javascript">dataSetRow["age"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">attrs</property>
+                    <expression name="expression" type="javascript">dataSetRow["attrs"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">curruntdate</property>
+                    <expression name="expression" type="javascript">dataSetRow["curruntdate"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">dateofbirth</property>
+                    <expression name="expression" type="javascript">dataSetRow["dateofbirth"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">import_id</property>
+                    <expression name="expression" type="javascript">dataSetRow["import_id"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">name</property>
+                    <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">photo</property>
+                    <expression name="expression" type="javascript">dataSetRow["photo"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">created_by</property>
+                    <expression name="expression" type="javascript">dataSetRow["created_by"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">updated_by</property>
+                    <expression name="expression" type="javascript">dataSetRow["updated_by"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">addres</property>
+                    <expression name="expression" type="javascript">dataSetRow["addres"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">department</property>
+                    <expression name="expression" type="javascript">dataSetRow["department"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="source">file</property>
+            <expression name="uri" type="constant">row["photo"]</expression>
+        </image>
+        <label id="8">
+            <property name="fontSize">14pt</property>
+            <property name="color">blue</property>
+            <property name="marginTop">10pt</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">Detail</text-property>
+        </label>
+        <table id="9">
+            <property name="fontSize">12pt</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">medium</property>
+            <property name="marginTop">20pt</property>
+            <property name="dataSet">employee</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">name</property>
+                    <text-property name="displayName">name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">dateofbirth</property>
+                    <text-property name="displayName">dateofbirth</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["dateofbirth"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">age</property>
+                    <text-property name="displayName">age</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["age"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">curruntdate</property>
+                    <text-property name="displayName">curruntdate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["curruntdate"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+            </list-property>
+            <column id="28"/>
+            <column id="29"/>
+            <header>
+                <row id="10">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <cell id="11">
+                        <label id="30">
+                            <text-property name="text">Name</text-property>
+                        </label>
+                    </cell>
+                    <cell id="12">
+                        <data id="35">
+                            <property name="resultSetColumn">name</property>
+                        </data>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="13">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <cell id="14">
+                        <label id="31">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Date Of Birth</text-property>
+                        </label>
+                    </cell>
+                    <cell id="15">
+                        <data id="36">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">dateofbirth</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="16">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <cell id="17">
+                        <label id="32">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Age</text-property>
+                        </label>
+                    </cell>
+                    <cell id="18">
+                        <data id="38">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">age</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="19">
+                    <cell id="20">
+                        <label id="33">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Form Insert Date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="21">
+                        <data id="39">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">curruntdate</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <table id="40">
+            <property name="fontSize">12pt</property>
+            <property name="color">aqua</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">medium</property>
+            <property name="dataSet">address</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">address</property>
+                    <text-property name="displayName">address</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["address"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="50"/>
+            <column id="51"/>
+            <header>
+                <row id="41">
+                    <cell id="42">
+                        <label id="55">
+                            <property name="color">black</property>
+                            <text-property name="text">Address</text-property>
+                        </label>
+                    </cell>
+                    <cell id="43">
+                        <data id="57">
+                            <property name="color">black</property>
+                            <property name="resultSetColumn">address</property>
+                        </data>
+                    </cell>
+                </row>
+            </header>
+        </table>
+        <table id="58">
+            <property name="fontSize">12pt</property>
+            <property name="dataSet">department</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">name</property>
+                    <text-property name="displayName">name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="68"/>
+            <column id="69"/>
+            <detail>
+                <row id="62">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <cell id="63">
+                        <label id="71">
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Department</text-property>
+                        </label>
+                    </cell>
+                    <cell id="64">
+                        <data id="86">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">name</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <label id="91">
+            <property name="fontSize">14pt</property>
+            <property name="color">blue</property>
+            <property name="marginTop">10pt</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">Laptop Detail</text-property>
+        </label>
+        <table id="92">
+            <property name="marginTop">5pt</property>
+            <property name="dataSet">laptop</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">name</property>
+                    <text-property name="displayName">name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="99"/>
+            <header>
+                <row id="93">
+                    <cell id="94"/>
+                </row>
+            </header>
+            <detail>
+                <row id="95">
+                    <cell id="96">
+                        <property name="fontSize">12pt</property>
+                        <data id="108">
+                            <property name="marginLeft">20pt</property>
+                            <property name="marginRight">20pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">name</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="97">
+                    <cell id="98"/>
+                </row>
+            </footer>
+        </table>
+        <label id="101">
+            <property name="fontSize">14pt</property>
+            <property name="color">blue</property>
+            <property name="marginTop">10pt</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">Task Detail</text-property>
+        </label>
+        <list id="103">
+            <property name="dataSet">task</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">name</property>
+                    <text-property name="displayName">name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <detail>
+                <data id="104">
+                    <property name="fontSize">12pt</property>
+                    <property name="textAlign">center</property>
+                    <property name="resultSetColumn">name</property>
+                </data>
+            </detail>
+        </list>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">h1.jpeg</property>
+            <property name="type">image/jpeg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSExMVFRUXFxYYFhcVFxUWFxgVFxUXFhcVFRcY
+                HSggGBolHRgXIjEhJSkrMC4uFx8zODMtNygtLisBCgoKDg0OGhAQGy0lICUtLS0tLS0tLS0tLSstLS8t
+                LS0tLS0tLS0tLS0tLS0tLy0tLS0tLS8tLS0tLS0tLS0tLf/AABEIAL0BCwMBIgACEQEDEQH/xAAbAAAC
+                AwEBAQAAAAAAAAAAAAADBAECBQAGB//EAD8QAAEDAgQDBQYFAQcEAwAAAAEAAhEDIQQSMUEiUWEFE3GB
+                kQYyQqGx8BRSwdHhYiMzQ1OS0vFygpOyFRYk/8QAGgEAAwEBAQEAAAAAAAAAAAAAAQIDAAQFBv/EACMR
+                AAICAgIDAQEBAQEAAAAAAAABAhEDEiExBBNBURRhQiL/2gAMAwEAAhEDEQA/APHNar5VYNVoX0qR8m5A
+                sq7KiwuypqNsCLV0IuVRlWo2wMtUZUWF2VajbAsq4BFyrsq1B2A5V2VGyrsq1G2A5VIYi5VYMWoGwDIr
+                CmmWUUdlFK3Q8U2Iiip7laYw6g0EuxVYzLfTQ8i0alFAdRRROSaFMq7KmDTUGmmoW2AyqMqY7td3aFGs
+                BlXZUfIu7tajWwOVTlRhTVhTWDyAyqciYFNTkQNQtlUhiYFNW7tazai2RdkTORdkWNqDhdCLkUFqc57B
+                wphXhTlRNYKF0IhCiFjWUhdCJlUhiJrBZVOVFDFYU1g8gcq7KmhTXZFrDqxcU0RtJGaxEYxI2VjArTpJ
+                yjh1FJi18Bh5UZyo6scRenguipVwcbL2nZ3YxcLBL9p9lFmoXMsyujqeJ1Z4WtQSlSmt3G0YWXVYumMj
+                mnEQNNQWJosVSxUsg4i2RSGI+RTkWs1C+RdkTGRdkWs1C4YpyI+RdlQsNAQxTlRcq6ELDQMNXZUSF0LW
+                ageVdkRIXQhZqPPYP2gIEVAHdRY+mhWzhcVTqe44TyNj6b+S8FdXa8rih5Ml2dmTxIS6PoDqSq5i8the
+                36rBBOYbZ7/PVaFP2laQM1MzvBEeQK6Y+TBnJLxJro18q7IgYTtKlU0dB5OsfLmnsispp9EXia7QIMV2
+                sRGsRmUkdjKAAU1YU022giNw5W2DoJd2p7tPCgqPDW+84DxIH1W2G0FAxXaxMtYDoQfC/wBFxpoNjJUV
+                prb7LeJCxgE3hq0KE+Toxs+n9i1m5IlJe0dZpXmML2oQNUPHdol264VhanZ2vNcNTN7QddZNRNYmpJSj
+                l3w4RxTBkKpCuVQlUslRWF0LiVGZazUWhdCp3i7OhZqLQuK4Jd+NYM4m7AS4eUxPNBySCot9B1Cya/b1
+                NueY4TAG5IIDvKPos2t7VflZ8UzOrQdI2JUnngvpVePN/D1C5eY/+1ABsskmC7aASSQ3nAgApdntU8Fx
+                yggk5QYgD4dBJPmlfkwGXjTPWOqAODTqQSPAan5hXK8C7t+sXtqFwzNBAsLgkmDzHTolsV2pUe4vc655
+                W2hT/riP/HL9KtcitOyWZVCkVRzXFsjrcWHJhWCAK4O64VwmUkDRjTWHZOUO0azLNe4Dkbj0KzW1xzRm
+                1RzVIzrpk5Qf1G7R9pKoEENPWL+miu7tqo7/ABI6Dh+iwG4psXKK2sw7gK0cz/SMsC/DYfjap1qP/wBT
+                v3QzXd+Z3qVnNxjRPFp+ybo4phiYvy++qosqZN4ZIL3rtA4xykqA0lHoOpuJAIkGLppuHEx4fOf2KOwV
+                ChOnTI0t4WWtge2KrLO/tB/Ubjwd+6SxFanTEuPO28iP3SR7cZIhhI3m3L+UPYkP6rR7Gl2rRcJLsh3D
+                h+osmhpIMg6EXC8C7ty9mNjrJ5cvP1U0e3Kg90hk/lkevNb3IX1Ue+FQqHVV45ntDWkcU9IF5jePuUen
+                7TOg5mNNjBki+09NdEPZEb1yPRvKE4rzz/ak3im2NpJ+azsV7Q1XfEGjk0AbyJR9qQnrbPWuchly8TX7
+                YrH/ABHJOpjHHVxPiSlfkDrA2e6r4xjc0uHDqJE+Ec0ge2WB75qNLALc/hFvPMfALxzq0oZqKT8hlI+O
+                j0uJ9pdQxt9ifPb0SdT2jqkyMoF4AHQj9fksMvUZlOWaT+lVgivho1e2KxJmo64gxa0zbklHYhxmSTOt
+                zfxS5colTcm+yqgkFc5VLghyqyksdRC5lGZDlchYaCtcFBehErkDUcVwRC4clAqdEAlFwRhX6D0Ck4o+
+                HoibkCCiF6scU42npoP0C7vCiBlJUhW7881IxB5ooBUK7G3XfiHcz6lWbinD4neRKNiuy4rFukjT5Gym
+                tjnuMlx23O2iqXucdSTc36XKvWwdRsEtMESIEpuQcfQDqpJkkk9ZKsHLnsc0w4EeIIUsePzgeIf+jVro
+                NfhZrlfOqh7f8wej/wDaiMrMkS628B0x04Ud0Lo/wt3qg1Vsdm0sPWqNp021sx5vaBYEkkmiYTeP7Ip0
+                ml7m1CBE5arTA0mBR0W9qG9UjzGdVL05X7gnhfUaP6ml59Q1v0Qiyj/mu/8AE7/d9ws5oHrYqXKpKaDa
+                X+a7/wATv9yWqkTYyPAj6pdg60DlRKkuUShYxCiVMqCgY5QuldKFhIK6FxKiUAnQuUteVVAJyiFy5YIY
+                01PdKcykFFIm2yO6UmiFcFcSmpC2yjaARWUQoDlenmJgAk8gmSQrbJ7gKwoNWthvZ2s67srP+o39AtWh
+                7LsgTVM7y2RPS+ivHBJ/Dnlnivp5kYRpAgc/T7+iZo4Fo1C9A7sEgSKjY6yLKv8A8DU2cz1I/RWjhS7R
+                GWdvpmfRZTBByiQI8loMxeiufZ+rzZ4z/Ch3s9VGjmep9NFTSvgiyf6TUex9ntDtNekx9T6pF/Y9ExGY
+                X2O3K/l6JkdlVhrlHUuCf7O7HL3QSXn8tMH5u2CR475aLLLXFmIewmOPA53URm53t5Jqn7JkNzuqCmwb
+                1GwY8BeV6jGYmjg2/wBq5rTc9zS4qhi/FyHUrJxuIc80a7pE1qZbSaTla1wMSfidOXiNhFouTCevOp0w
+                UuNi/s1g6VIOqZhUnhGYFhEEh3Dfcbo2PqUySLEEEamIPRK9mFzmAjKRmqHQ3/tHFGrB5Mx6NcuFu3Z6
+                EVSoXwns5hajTle7O2MzJu0QDIkQ4fuEhiPZEWy1bWnM241vbXZHwzv/ANQGYtIJcIkEHugJjcdDyXoe
+                zXMxrS6mRTrCQ5jgQ1xa4tLmn8sjW8aFdWOUa/8ARxZYP/ns8TX9lag917TqdxpJ/b1Sz/ZnEflBuRYj
+                ab/fNevxJfSfkqNLXDnuOYOhHUKWYpdf88HyjifkTjwzwFXsuq2JpuEzFtYifqPVK1KDgASCJ0kETeLL
+                6XVeHNLTuCOtxCA/DMLQxwzD+q53/dTfi/jGXl/qPm8KpXu63YOHdJyxMe6YjXT72SVb2XpkDK9wNpmD
+                PMxspPxplV5UPp5BQvQ1vZh2cNa6WkE5iLNuYB66LKqdnVBNpyhpP/dEf+wUZYpx7ReOWEumJLldzCNQ
+                pdRcNWnSdNufgkKWCXKxaVEpQkFdClcsEICrBWZTmwBK0MP2W868I66+irCEpdHPPJGPbM9rCtHB9kvd
+                c8I5nXyC1MNg2s0EnmdUxmXZj8ZdyOHL5jfEANHsmi3UF3if2TuHDKfuNa3wF/VBYJMc1ZjNZsRNj02X
+                RePH8OVvJPtjRxJXHFnmkbnQTGp+WnOeUqteoABJIvaNdCbeEfNK/JWra+BjgdpM0DjbgbC5/QIwxpWW
+                xhF456kaiANEVPiyqfIuTG48GkMeVAxskA1KdOd6jgxvqdSkAUHtDCCrTLJAJiDExBlUm3q9exMeu636
+                PTGpgqTe8q4ltaPhY7fllbfzJAWefap9cOZhcuHoiA4gS90zpsJ+XVefqdl0qVGpAzOyO4nbHKfdGg+q
+                j2RqNFOpmtdpnbcX9V57jL2RWV9nrRyQ9UpYV0aOMpNZh62UGSx2ZxMudwnV36aIXauKc2jQaGF4DqRe
+                BOwBayRMF0jbcc0922MuGfaXPpuLW6RTi9V/JsSGj4j0F7Yp+TBsNNoJb3DwOZFSm4ymy021HpI2G0k5
+                9tm77J9h4yvQFRuHaGuLyBUxDmG73H3RRdETGuybxvsxjmX7mkBa7cU8aeFEJ3BYt7KTRLg5rRJDyLwJ
+                MeqlvbNRxgVXgcs5cYH/AGrzbPUSPnnaoxFHGNa6i4OaS45XGqCzIwO4g0aQJtuEfsJzu671hILX1nMc
+                NRxu+R3G63e13u/F03uu3uqgB1Ml1IwT5FYHYeJy0qrHHhca7qcbFrnAs/VdeCqt/bOPPbdL5Rou9tML
+                Xot/ECCZs2mXZSNYhwLSZ10MGx2RwlWnUk0XOcwbuaWmeXXxHNY3spTpvpVmVGggmn4ggPu07G62Oz6b
+                aDO7aSRJMnW6v4kZ8P4cnnTx8r/ocDCpyoDsWqOxa76PN2HMi4tSRxR0UfiihwbY0ICqWjokRi9Z8uvR
+                c/EnTklUk+B3aQ07DMMS0WkaDQ6wpdRaRBAIiIgacvBJfiVwxKOqF9jDV+z6ZZlDGCJy2EAwQD80sewa
+                PdinERBLhqTF7nZE/ELvxKR44v4Os8l9E2+y9HiuTPuz8Njy1/hVpeydKOKo4neAAnvxKn8Sp/z4/wAH
+                /qyfpl0srRDQB4K5qpHvV3eoKdBeNvsd75R3qS71calpWeWuWFYbHhU6SqMe4cHXQ30sqChLTxjUDhzG
+                5gwbdPVCc1wAIiZG8bwLrjl5UJS5ZeOBpcDbK5DSfhA1tDYAOsdOpHigVMXILjltEDWW5hAAI158gDrY
+                JV9YtDrZoiIuBzc6dCL32KFhHjOc5iGECL+9aw6SuCfN10dkY/pqYWsM5GbaQCCOZIkH5HomwWmWszSO
+                ZiZPugZbHQ+Xksui9pzOAILmyd+KOZjXl4XTLQWNZpmBkyfi1zTPgYT4srVRuieTGnzQQujmubWUuiBA
+                Mho94AEibZddz49Us4knQ35xr5L0sPl7OmcmTxqLdsV3GmQ2AMvESdYJMNnc2HkszssjuXTB4m8J+KbE
+                EggtF9eouITntLQytYZgEGxMkkaEDlJhI9hUw4kZcx5GbSQJMclwZJ227s9HFBQglRtVKo/CvI1cx0m5
+                kht4J1AMhHp1sxw9AG57tzzc2OUtZYj4QSf+ockoA2AC6MwIvyF3kRrAna8QtT2UoTUdXjK1vCwSIbYA
+                kW1DbSOZT+56dhx4rlbX09h3TyPijmA79ZVWYYi4zaXJn/bpdXJMe87/AFMCrVEWJ1/qp6rms7qAdp4X
+                MzigOjhcZsbOgkwADEea8LQH9gQ4fFVPgczp+q984zrl137sjf8AqXjO3aJpvdERxO4cpaAQ6wgm9nfJ
+                Wx5XFUc2fGm0zI9mHgU33uXNt5LSqVY/Ref9nqgz5XaHx1i2nhHmteo3YEk8gNui7cGdRhR5nlYdsmwZ
+                zzMbqO805pc1DLRBgC4naY8tlonCHVoIyx728TESNN/LVbJ5eqV9sSHj2LMJJgCT0+cImKJBy20EkaeP
+                3zUhxFWzDYCZ90AgOkkN66Rv6WxrxDyQAAZcA+8EiCW3sP1C5MvmuOSL+UOsCqgPejY35wNTy5eKrWrc
+                RjSbLq+DGWxcSDcgOIy2Im3j6aoTMOdyQJJPDcNnhMbb+oVoeXDa7Flh4L98u75Jh3X9Pmo7xdnsJeod
+                71T3qXwwDjBOURrEx43Co50fcIe5XQPUOd6u71Jd4risOXzReQ3qBtpze9+UG+pAHmhvab2gA7/Tr4ot
+                IXtmBEQ0AST05COfNXr0ajhEAc5AtOxdqvJhnkpcs73BCJeuNxe8X/lWrUcomZHOY+RCVNRdfsUlwBQL
+                mo5oMTBsRtE28PHqimuAY4HWIkBwBHOxHEI1II8UFzhlNzPLaZS1HM3iaY1059PVcc1G+Doj0aFUghxz
+                QZNyAJNyTb6IEZRYgz8UQba3JNlRjyY0J6WPOdOio0yQPkbDle/jdCuKNqamHeIkTIu4kg25QIvyvsjv
+                xBMNmxuCWgDU2jrbc6oNPF92Pc3GhInctNyD8tdUGs47w0iYF7Otpv8AcqP01GnSeXgh7JIDi2JsJkw3
+                w015BAqF1JuYFrnEDKyScwicx6LsNSyvu4xw+628gXg6XuPNVxFcmS8ZiCZgAAaACdN5jaw6KkJuKaX0
+                ygm7Mztiq9xzVHS/SNmtABgDYbQq9l1Q0OncRYxcGUtWuXFEwm3U3/fyTPlclRoYkugAEmRlidSRH34L
+                6F2O4UqbKdyYmA2oLmCTYXvK8n2RQAqCS0Zd5Av0kibH6WC9dha7bOmmHEGMznSAYkaSNBbop7LpFsaG
+                a+LfsXxYf4oPPki/i7Xc+Tparr6hVGLH56X+px/VLYh4cC0PpT0Dz9SgVLvrwMxcfGKngDc7rzPb8nOZ
+                kZXDSJhrokSb3N+q2oANnU3b/EdBte3hosLHUh3BFycpJnhdMZRmad9BqlcqonNcHlcFIBcNb21uBZb1
+                KpDQXSHwJiGgEgb6gxK8/hqhbfr9/fVbdCoHgah2+Y7aCPp1noruVd9HJNWdTgOzTa5vc2sZ02+q0a9c
+                wbkHKQDJGxJlp1tHr1SeGbxFzRpzGjrm4NhpF9/mbENgd5OaSJIMNmx0PFpItZRyz3aFiqO7wuOaczr6
+                A2kmJ3Oh5q2Ia1zXOsC+5uQQbGJPw2K7DEXEhpBDtJNrOPTnpoDzQqz7w4CwMRHFBABmbkybdFGUm+Pw
+                DRfsmscrpcSYscxgEg3ib8IMWtN7oZqSDmBIAIaQdYkiMw5EzHLqs+mx7ajpm4MwSIzAzH5gNDpr5In4
+                wuaNxIhsSCbi8aGMvP5WOnNoDiadDCWzFlvhIiL6wNXWi5FkmKYzkN90mRYgDm2+1tkLC9ohpEiQ2bAA
+                awIkQLCbwpZVBqSOZBu0FwgyTFiYiyeEsik7YHEew+EdDsoB90AunYG+UdDrO5Wa992j+mCZLZueZMbD
+                l0Wq1uSnUcTEgQf6gL2BgCx8Z20WN2bWDuFx97MLGIkE6aQmw5ZOTb5FUbTHGMMSGt90kzfSxgA9QoJB
+                u00gNg4mfNHwYBEyIzN4gTdsnPOxNhaJ8lmlpFpNuQEeVl0xyW3bF1H2cItOtstiSLiS77sln1i4kEuM
+                WjMLwJOvPpCSfXkWdJvc9Z6a3QHBzTeTN+RK54xZfWxvEQTeRudPlv5ITa7bxBEabiCCCTEE208Ui+oT
+                ruq5tlZXVB0C1HT98+aihBkmbX8UGURsWsPmix64C57aQdjopo07kgiBHX5DzQw6IB5fU7c1NIGJBj1B
+                +WiATQ7sRmzyb3InTSBuban/AJew2BzDM8lw4ut4208Vj95LwBMW16rYwFMGAXERHwmQJDTMbSQAZ32U
+                ZWhRqjVDYAEmOEnXNO/KxI21WZ2vXf7rhBG0kwQBre5sDPRMViA4l2sRrMHrAHzjdYeJrkkyTAmP3Wgr
+                Y1UAei4WqGniEj0QgJT3Z+CDiOKNfhDtOYzBWa4CuTf7N7SANiBIBMNmIHMC+g21M7LbPa4Df7waWBYd
+                xfViw6TQ0yKgkEn+5GTXRwDiTe4noiZaskCpTdGoylt9LgU49VDVLo6I2karO3KlmtJ0izQYFtIZfRBo
+                Y+uC5xr5h+U0pO3xFsA+XVVoiq+cvduFgTmaMvOwIAgGwKp2gXAAENB8JAuTdwIOy1jDNQvfTdDod+YU
+                xdxF4ytJA8T/ADi1MK8MLKzi4jSz2ki8XIvp9U9+KqZR3cNIg2N+moMj7gqmIx+Ie0MJqOJOjmsDdNnC
+                OR+G0jXUZLmxZUzxpJAIPP8A5++i0sJWJYWi5t5C8mdt1TtB3F8RMXLiJJm5iBFtvPdAFSBaZ26DXz5K
+                zWyOZm52fjCDD2wzo2RsCS7ncnfQKuKIBJvaBE3iDA0Mxb+EHC497WifddawNgBG8wbmyIKzcxzNETAi
+                BuYm8/l0N5hczi9uhXHkrh62U5pkEEGRJ0uANBte9kuah/qMkTJPEdJ06EevkOrjGB2UzAJ922kxeP0Q
+                cTiCCC1wMaASY38FXRsNGj2gJbmJByu2Ia67b2uNGj5arOFfgcG2BcNS2YEbQDrfyKIHuIL/AHiBNjMA
+                WlwGjdEkal7xqLEW3iR5owhSpgSGO84Sc0uOoiZGkg+SaoV8pDoa6BYRDYMtNufkVnM4b7jTe/0TzK+Y
+                tbAAjUGNokn9FpIFF6mYgkRzyiII3JA8/Q3VsJSDnwHQ43BcLZhMaG26LSAa2XCblvOdSYIgA6mCDN+S
+                q2nlkFpkXkaA6CD+iXrgFBqL2tIaRsZgjXQCD4XlPtpVSJFMRtxNFtjEFZtWiws7yeNxHX80m+hkH0mA
+                mKPabwAOJ3UueD4RfTTXZTlFS7EcTPxeHDaYMwPAST47bjohUg6LnXQGbgTJk6AJvEY2mWxllwiDEASI
+                vBjy5yj06zA1vCN5JAF40E7X8OYTKTS6GTZivoSJbreYBjoBZL5W8/ktOq6m6JIaANGD+BO9ys+pUaJA
+                G9jOg2hXi7KJgiolTUdJkKKbgNRPyPkU4QlE8/nFvXyRKlWDoPvdAFTkB+qrc9UKCHa+b/fmnDi3iDtB
+                AkTadJ2v9EKjhYaXHUeBFvNDLS7hEkC55fL7ug0magmIxxPpB67SlIXGnBhEDR/xp5oqKXQpzWeq3aFA
+                tYMhhxMknKI5CZv8tFn4fCEtJg3jLAubx5D+Vs4Gj+fKI5h0X6jXleDySTkWxxDYTDA++dPiJmYN9AI3
+                38kR9YU3OzFgDdABsIuc1zPTSDdArUXudwOyiCRkBIImbm5i8eYV6eElsOyzuXQDykgi2sfqpFqH6eKL
+                h/ZgEa3BI00gfv5Jau8CM7Q4mwIcBe/rc6fwoLXDhpsDmnZhAjq6RM7/AGE1TcBHFxwbF1xGsgQZ8ddt
+                0LNQuWuGgyi8AkkwYmb8xb+VR2JcNYImzpiOhi1rc7Jis8iZGukXkDaCP1OqC5xgAs4TFwLBxB8DsfXo
+                snZmhXtDABzCzNmqA5uLK0zZsFo0tI89F5si0b/ovQhuYktJsCJYZgciSIB4djzCxu1aBa8wZBkyYuRE
+                6E81aD+EMi+iwqkNLdtfPp97IFWrJVnac0EhPRM0XMpuhwBgf3kTYQL+u/ilauGcHADin3SNwh0qhaZ+
+                tx5jdaVBlKoPeyED3ZIG8kSTGywRNtJzdYBOgO43g6fNFpUMwJBhwjMDex0IO6NQ7sX4qg0yFtpNgc22
+                qvUAg58wEZZsXN3DXwLi9isYzxTMkRp9Of09UeiziGXwnrGh6KcTXp5WtaSXN4ZIiW36/VUouINhJIIj
+                9bb680GBo1cM4xBmXQCANRyJn3rGDyG03fdTcKOcUyRrmdG+UQZMnSJ1v0SlBzCyzZNi3LLoEAHM2ZN5
+                06hExGMeA2SS2LS1vDuAZEyJ08FzuxGmDqVGuZ7liM1p0DiDOmkjTYJWkJHPz/ldXcLHLEADhEX8Odgf
+                2Va2QOIIBPMDndFcBOrsdAgQBckwNBEwbBCq03ZMs7kiQRsAdegBKrXdAM3i2wF52S1bFGA3QeJ3VYx4
+                GorXZBy2JHIz5zCA4qJXNVAkhXZSnw5+Gql7Ijy+aYqs4eUDbQz0WMLPpxuLfduicw2GOohx2mYnyF/4
+                Q8NTFyRMFo/1GFsMeXUyRDQJAA5C1yfGUGZCdVrwGsLS030Ek3m4XVmtpMLZzPdO0AC++506LUDRkNUe
+                8GuIm+hAM6Akg+Swa7y9xeTJN/4sguQvhFA3mj4HDOqOyhsjUwNhzJQOi2cHiu4pB7ROfNN4IyxAnldG
+                TpcAgrY23s1/uucJgQJIbEmzSLzba11pU8OabS15aTAhp0uRB0kC/VI0sS/3+G4sMswbmRfqfVaNJ3eU
+                mzqQ7wtBI5781zSb+nUkvgrRBzS0gTqXDXyGm2ypiMKxxcXC8wDeSdgZ1K2HUWtw1IxfO9pIgTuJtfRZ
+                9OuG1MuW2YjU8w39Z8gtZqJwjmtysJHKLkm2xO9zry6q2KY5ozATyIbFxsL66pmqC8GCBAIu0O318Vn0
+                GZmh0ub72aD72UxckeHodZKH+hIxGNeIziJAOUAOdfSDpuhiu8nhyQ6xa4PLoGrm2AO18wkiE6MO3LmI
+                BPvEwMxO8nn1SuOApvDAJBLJkmLjSJ04fuEU10BplzQLW3BBGzmgag5pM2ItGv6rP7Uw4qMcWkEtkgcI
+                0jMBBuL8tQU3i6gpte45nZQ8AZiIdoHDw5GUKm6Wlxn3X2BMcIkRMxrt1TIV/h5dsfNDcJum8TSDXkCb
+                b85A/dDFLrb7/ZdJy9CjmqAVdVlYJNKplM/uL7GyJiK82tzJAMk9ZKCVBQoJLBJARqVTK688rGCLpdGF
+                /RYw/h6rXBwMC0ibyZg3BB3mOhTTMRScwgOc0yAQYym9tbyPosNONx5ADSA4ciBqbEjkUriYrVe+8ybj
+                iExOwnwKYp4t4AFj5t/W6OKQcwVCNdr+Fzus3L4+qHDAf//Z
+</property>
+        </structure>
+    </list-property>
+</report>
